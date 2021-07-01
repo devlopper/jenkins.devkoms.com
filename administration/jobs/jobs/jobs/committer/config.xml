@@ -16,13 +16,10 @@
       <command>#!/bin/bash
 cd $JENKINS_HOME/jobs
 git add .
-git status
 string=$(git status)
-echo &apos;THIS IS ::: &apos;$string
-if [[ $string =~ &quot;nothing to commit, working tree clean&quot; ]]; then
-  echo &quot;UP TO DATE!!!&quot;
+if [[ $(git status) =~ &quot;nothing to commit, working tree clean&quot; ]]; then
+  echo &quot;Nothing to update&quot;
 else
-  echo &quot;commiit!!!&quot;
   git commit -m &quot;automatic commit&quot;
 fi
 #git push -u origin</command>
