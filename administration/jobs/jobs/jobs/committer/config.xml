@@ -17,6 +17,7 @@
 git add .
 git status
 string=&apos;git status&apos;
+echo &apos;THIS IS ::: $string&apos;
 if [[ $string = *&quot;nothing to commit, working tree clean&quot;* ]]; then
   echo &quot;UP TO DATE!!!&quot;
 else
