@@ -15,7 +15,13 @@
     <hudson.tasks.Shell>
       <command>cd $JENKINS_HOME/jobs
 git add .
-git commit -m &quot;automatic commit&quot;
+git status
+if [ `git status` = *&quot;nothing to commit, working tree clean&quot;* ]; then
+  echo &quot;UP TO DATE!!!&quot;
+else
+  echo &quot;commiit!!!&quot;
+  git commit -m &quot;automatic commit&quot;
+fi
 #git push -u origin</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
