@@ -1,7 +1,7 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Commit</description>
+  <description></description>
   <keepDependencies>false</keepDependencies>
   <properties/>
   <scm class="hudson.scm.NullSCM"/>
@@ -14,18 +14,11 @@
   <builders>
     <hudson.tasks.Shell>
       <command>#!/bin/bash
-cd $JENKINS_HOME/jobs
-git add .
-git status
-string=$(git status)
-echo &apos;THIS IS ::: &apos;$string
-if [[ $string =~ &quot;nothing to commit, working tree clean&quot; ]]; then
-  echo &quot;UP TO DATE!!!&quot;
-else
-  echo &quot;commiit!!!&quot;
-  git commit -m &quot;automatic commit&quot;
-fi
-#git push -u origin</command>
+STR=&apos;GNU/Linux is an operating system&apos;
+SUB=&apos;Linux&apos;
+if [[ &quot;$STR&quot; == *&quot;$SUB&quot;* ]]; then
+  echo &quot;It&apos;s there.&quot;
+fi</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>
