@@ -1,0 +1,22 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>Create kwordz file server docker container named kwordz-file-server. The container is deamon and automatically deleted when not running.</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>docker create -e &quot;MYSQL_DATABASE=kwordz_file&quot; -e &quot;MYSQL_USER=kwordz&quot; -e &quot;MYSQL_PASSWORD=kwordz@2o2O&quot; --name kwordz-file-server --rm -p 9001:8080 kwordz-file-server:latest</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
