@@ -16,7 +16,8 @@
       <command>cd $JENKINS_HOME/jobs
 git add .
 git status
-if [[ `git status` = *&quot;nothing to commit, working tree clean&quot;* ]]; then
+string=&apos;git status&apos;
+if [[ $string = *&quot;nothing to commit, working tree clean&quot;* ]]; then
   echo &quot;UP TO DATE!!!&quot;
 else
   echo &quot;commiit!!!&quot;
