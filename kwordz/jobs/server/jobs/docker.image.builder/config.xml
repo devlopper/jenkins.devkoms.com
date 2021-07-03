@@ -51,7 +51,7 @@ if [ ! -f &quot;$bootable_file&quot; ]; then
 fi
 #mkdir gitignore
 #cp ${bootable_file} gitignore/ROOT-bootable.jar
-docker build --file Dockerfile.wildfly.bootablejar --tag &quot;file-server:latest&quot; .</command>
+docker build --file Dockerfile.wildfly.bootablejar --tag &quot;kwordz-file-server:latest&quot; .</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>
