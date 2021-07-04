@@ -13,7 +13,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>docker create -e &quot;MYSQL_SERVICE_HOST=devkoms.com&quot; -e &quot;MYSQL_DATABASE=kwordz_file&quot; -e &quot;MYSQL_USER=kwordz&quot; -e &quot;MYSQL_PASSWORD=kwordz@2o2O&quot; -e &quot;FILES_PATHS_NAMES=/opt/data/score/Partitions&quot; -e &quot;MYSQL_DATASOURCE=file/server&quot; --name kwordz-file-server --rm -p 9001:8080 kwordz-file-server:latest</command>
+      <command>docker create -e &quot;MYSQL_SERVICE_HOST=devkoms.com&quot; -e &quot;MYSQL_DATABASE=kwordz_file&quot; -e &quot;MYSQL_USER=kwordz&quot; -e &quot;MYSQL_PASSWORD=kwordz@2o2O&quot; -e &quot;MYSQL_DATASOURCE=file/server&quot; -e &quot;FILES_PATHS_NAMES=/opt/data/score/Partitions&quot; -e &quot;ACCEPTED_PATH_NAME_REGULAR_EXPRESSION=.pdf&quot; --name kwordz-file-server --rm -p 9001:8080 kwordz-file-server:latest</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>
