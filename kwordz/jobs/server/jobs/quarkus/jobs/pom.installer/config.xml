@@ -28,8 +28,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd pom-base
-${JENKINS_HOME}/maven/bin/mvn clean install</command>
+      <command>${JENKINS_HOME}/maven/bin/mvn -f pom-base/pom.xml clean install -N</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>
