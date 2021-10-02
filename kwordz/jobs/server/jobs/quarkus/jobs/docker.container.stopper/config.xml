@@ -13,11 +13,11 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>if [ -z `docker ps -q --filter &quot;name=kwordz-file-server&quot;` ]; then
-  echo &quot;Container kwordz-file-server is not running.&quot;
+      <command>if [ -z `docker ps -q --filter &quot;name=kwordz-file-server-quarkus&quot;` ]; then
+  echo &quot;Container kwordz-file-server-quarkus is not running.&quot;
 else
-  docker stop kwordz-file-server
-  echo &quot;Container kwordz-file-server has been stopped.&quot;
+  docker stop kwordz-file-server-quarkus
+  echo &quot;Container kwordz-file-server-quarkus has been stopped.&quot;
 fi</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>

@@ -13,7 +13,7 @@
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>*/cyk_pom</name>
+        <name>*/cyk_file_server_api</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -28,9 +28,9 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>for directory in &apos;pom-base&apos; &apos;pom-jee&apos; &apos;pom-jee-utility-__kernel__&apos; &apos;pom-jee-utility-rest&apos; &apos;pom-jee-utility-file&apos; &apos;pom-jee-utility-persistence&apos; &apos;pom-jee-utility-persistence-server&apos; &apos;pom-jee-utility-business&apos; &apos;pom-jee-utility-business-server&apos; &apos;pom-jee-utility-service&apos; &apos;pom-jee-utility-service-server&apos;
+      <command>for directory in &apos;file-server-api&apos; &apos;file-server-api-rest&apos;
 do
-	${JENKINS_HOME}/maven/bin/mvn -f $directory/pom.xml clean install -N
+	${JENKINS_HOME}/maven/bin/mvn -f $directory/pom.xml clean install
 done</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>

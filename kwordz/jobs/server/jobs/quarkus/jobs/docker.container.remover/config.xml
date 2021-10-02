@@ -1,5 +1,6 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <project>
+  <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties/>
@@ -12,11 +13,11 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>if [ -z `docker ps -q --filter &quot;name=kwordz-file-server&quot;` ]; then
-  echo &quot;Container kwordz-file-server does not exist.&quot;
+      <command>if [ -z `docker ps -q --filter &quot;name=kwordz-file-server-quarkus&quot;` ]; then
+  echo &quot;Container kwordz-file-server-quarkus does not exist.&quot;
 else
-  docker container rm kwordz-file-server
-  echo &quot;Container kwordz-file-server has been removed.&quot;
+  docker container rm kwordz-file-server-quarkus
+  echo &quot;Container kwordz-file-server-quarkus has been removed.&quot;
 fi</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>

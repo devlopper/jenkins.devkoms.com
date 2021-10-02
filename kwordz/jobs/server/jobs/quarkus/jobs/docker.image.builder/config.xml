@@ -5,7 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.33.1">
-      <projectUrl>https://github.com/devlopper/org.cyk.system.file.server/</projectUrl>
+      <projectUrl>https://github.com/devlopper/org.cyk.system.file.server.impl.quarkus.git/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
@@ -13,7 +13,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/devlopper/org.cyk.system.file.server.git</url>
+        <url>https://github.com/devlopper/org.cyk.system.file.server.impl.quarkus.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -33,25 +33,8 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd file-server-_pom
-${JENKINS_HOME}/maven/bin/mvn clean install -Dmaven.test.skip=true
-cd ..
-cd file-server-deployment
-${JENKINS_HOME}/maven/bin/mvn clean package -Dwildfly.bootable.hollow=true -P package.war,package.wildfly.bootable.jaxrs.mysql,prod
-bootable_directory=&quot;gitignore/wildfly/bootablejar&quot;
-#bootable_directory=&quot;${JENKINS_HOME}/bootables/kwordz&quot;
-if [ ! -d &quot;$bootable_directory&quot; ]; then
-  mkdir -p ${bootable_directory}
-  echo &quot;Directory ${bootable_directory} has been created&quot;
-fi
-bootable_file=&quot;${bootable_directory}/ROOT-bootable.jar&quot;
-if [ ! -f &quot;$bootable_file&quot; ]; then
-	cp target/ROOT-bootable.jar ${bootable_file}
-    echo &quot;File ${bootable_file} has been copied&quot;
-fi
-#mkdir gitignore
-#cp ${bootable_file} gitignore/ROOT-bootable.jar
-docker build --file Dockerfile.wildfly.bootablejar --tag &quot;kwordz-file-server:latest&quot; .</command>
+      <command>${JENKINS_HOME}/maven/bin/mvn clean install -f file-server-impl-quarkus -Dmaven.test.skip=true
+docker build --file Dockerfile.wildfly.bootablejar --tag &quot;kwordz-file-server-quarkus:latest&quot; .</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>
