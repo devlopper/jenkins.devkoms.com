@@ -33,8 +33,9 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>${JENKINS_HOME}/maven/bin/mvn clean install -f file-server-impl-quarkus -Dmaven.test.skip=true
-docker build --file Dockerfile.wildfly.bootablejar --tag &quot;kwordz-file-server-quarkus:latest&quot; .</command>
+      <command>cd file-server-impl-quarkus
+${JENKINS_HOME}/maven/bin/mvn clean package -Dmaven.test.skip=true
+docker build -f src/main/docker/Dockerfile.jvm -t &quot;kwordz-file-server-quarkus-image:latest&quot; .</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>

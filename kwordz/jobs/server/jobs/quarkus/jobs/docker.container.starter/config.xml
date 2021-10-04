@@ -13,7 +13,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>docker start kwordz-file-server</command>
+      <command>docker start kwordz-file-server-quarkus</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>
