@@ -28,7 +28,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>for directory in &apos;jee-utility-__kernel__&apos; &apos;jee-utility-rest&apos; &apos;jee-utility-file&apos; &apos;jee-utility-mapping&apos; &apos;jee-utility-mapping-mapstruct&apos; &apos;jee-utility-persistence&apos; &apos;jee-utility-persistence-server&apos; &apos;jee-utility-persistence-server-hibernate&apos; &apos;jee-utility-business&apos; &apos;jee-utility-business-server&apos; &apos;jee-utility-service&apos; &apos;jee-utility-service-server&apos;
+      <command>for directory in &apos;jee-utility-__kernel__&apos; &apos;jee-utility-rest&apos; &apos;jee-utility-file&apos; &apos;jee-utility-mapping&apos; &apos;jee-utility-mapping-mapstruct&apos; &apos;jee-utility-persistence&apos; &apos;jee-utility-persistence-server&apos; &apos;jee-utility-persistence-server-hibernate&apos; &apos;jee-utility-business&apos; &apos;jee-utility-business-server&apos; &apos;jee-utility-service&apos; &apos;jee-utility-service-client&apos; &apos;jee-utility-service-server&apos;
 do
 	${JENKINS_HOME}/maven/bin/mvn -f $directory/pom.xml clean install -N -Dmaven.test.skip=true
 done</command>

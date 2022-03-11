@@ -28,10 +28,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>for directory in &apos;file-server-api&apos; &apos;file-server-api-rest&apos;
-do
-	${JENKINS_HOME}/maven/bin/mvn -f $directory/pom.xml clean install
-done</command>
+      <command>${JENKINS_HOME}/maven/bin/mvn clean install</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>

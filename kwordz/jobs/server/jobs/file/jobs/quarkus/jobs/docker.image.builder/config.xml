@@ -18,7 +18,7 @@
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>*/main</name>
+        <name>*/develop</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -33,8 +33,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd file-server-impl-quarkus
-${JENKINS_HOME}/maven/bin/mvn clean package -Dmaven.test.skip=true
+      <command>${JENKINS_HOME}/maven/bin/mvn clean package
 docker build -f src/main/docker/Dockerfile.jvm -t &quot;kwordz-file-server-quarkus-image:latest&quot; .</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>

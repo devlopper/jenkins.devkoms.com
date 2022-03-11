@@ -13,7 +13,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>if [ -z `docker ps -q --filter &quot;name=kwordz-file-server-quarkus&quot;` ]; then
+      <command>if [ -z `docker ps -aq --filter &quot;name=kwordz-file-server-quarkus&quot;` ]; then
   echo &quot;Container kwordz-file-server-quarkus does not exist.&quot;
 else
   docker container rm kwordz-file-server-quarkus

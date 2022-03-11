@@ -13,7 +13,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>docker create -e &quot;DATASOURCE_JDBC_URL=jdbc:mysql://devkoms.com:3306/kwordz_file&quot; -e &quot;DATASOURCE_USER=kwordz&quot; -e &quot;DATASOURCE_PASS=kwordz@2o2O&quot; -e &quot;FILES_DIRECTORY=/opt/data/Partitions&quot; -v /opt/data/score:/opt/data --name kwordz-file-server-quarkus --rm -p 9101:8080 -m 256m kwordz-file-server-quarkus-image:latest</command>
+      <command>docker create -e &quot;DATASOURCE_JDBC_URL=jdbc:mysql://devkoms.com:3306/kwordz_file_dev&quot; -e &quot;DATASOURCE_USER=kwordz&quot; -e &quot;DATASOURCE_PASS=kwordz@2o2O&quot; -e &quot;DEFAULT_DIRECTORIES=/opt/data/Partitions&quot; -e &quot;MAXIMAL_FILE_SIZE=104857600&quot; -v /opt/data/score:/opt/data --name kwordz-file-server-quarkus --restart always -p 9101:8080 -m 256m kwordz-file-server-quarkus-image:latest</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>

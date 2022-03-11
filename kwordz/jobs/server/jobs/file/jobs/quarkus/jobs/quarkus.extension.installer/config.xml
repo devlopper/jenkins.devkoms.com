@@ -13,7 +13,7 @@
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>*/cyk_file_server_client_rest</name>
+        <name>*/cyk_quarkus_extension</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -28,7 +28,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>for directory in &apos;rest/file-server-client-rest&apos;
+      <command>for directory in &apos;core&apos; &apos;rest&apos; &apos;file&apos; &apos;persistence-hibernate-orm&apos; &apos;business-core&apos; &apos;service-core&apos; &apos;test&apos;
 do
 	${JENKINS_HOME}/maven/bin/mvn -f $directory/pom.xml clean install
 done</command>
