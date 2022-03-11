@@ -19,7 +19,7 @@
     stages {
         stage(&apos;Hello&apos;) {
             steps {
-                sh(&apos;cd /var/jenkins_home/jobs &amp;&amp; git push https://kycdev%40gmail.com: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@github.com/devlopper/jenkins.devkoms.com.git&apos;)
+                sh(&apos;cd /var/jenkins_home/jobs &amp;&amp; git push https://kycdev%40gmail.com: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@github.com/devlopper/jenkins.devkoms.com.git&apos;)
             }
         }
     }
